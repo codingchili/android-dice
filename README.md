@@ -2,6 +2,10 @@
 
 Dice game for Android written in Kotlin, fragments, animations and sneaky algorithms for score calculation.
 
+<p align="center">
+    <img src="https://github.com/codingchili/android-dice/raw/master/screenshot.jpg" width="380" align="center">
+</p>
+
 ### Building
 
 Regular Android build, API 29.
