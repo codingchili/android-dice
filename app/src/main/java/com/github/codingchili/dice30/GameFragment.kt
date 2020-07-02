@@ -13,6 +13,10 @@ import com.github.codingchili.dice30.model.DiceGame
 import com.github.codingchili.dice30.model.Die
 import java.util.*
 
+/**
+ * This fragment is used to display the dice rolls to the user and allows for interaction.
+ * The user may roll dice, store dice for later rolls and trigger scoring of the round.
+ */
 class GameFragment : Fragment() {
     private var game: DiceGame = DiceGame()
 
@@ -78,7 +82,7 @@ class GameFragment : Fragment() {
         score.visibility = View.VISIBLE
     }
 
-    fun score() {
+    fun notifyScoringCompleted() {
         game.score()
         updateGame()
 
@@ -100,6 +104,7 @@ class GameFragment : Fragment() {
 
     private fun saveAction(view: View) {
         if (game.dice.isNotEmpty()) {
+            // dice cannot be un-stored in later rolls in the same turn.
             game.dice[slots.indexOf(view.id)].stored = true
         }
         renderDice(game.dice)

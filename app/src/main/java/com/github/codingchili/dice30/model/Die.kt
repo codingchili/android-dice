@@ -4,6 +4,9 @@ import java.util.*
 
 var next = 0
 
+/**
+ * Representation of a die in the game of dice.
+ */
 class Die {
     var stored = false
     var countOrder = 0

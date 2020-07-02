@@ -11,6 +11,10 @@ import androidx.fragment.app.Fragment
 import com.github.codingchili.dice30.model.DiceGame
 import com.github.codingchili.dice30.model.Scoring
 
+/**
+ * This fragment is displayed when the game ends, showing the
+ * total player score and the rolls recorded in the scoring history.
+ */
 class EndFragment(private val game: DiceGame) : Fragment() {
 
     private val newGameClick =

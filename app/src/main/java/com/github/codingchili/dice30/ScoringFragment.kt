@@ -11,6 +11,10 @@ import androidx.fragment.app.Fragment
 import com.github.codingchili.dice30.model.DiceGame
 import com.github.codingchili.dice30.model.Scoring
 
+/**
+ * This is a small fragment that is used when the player selects which
+ * scoring algorithm to use for the roll.
+ */
 class ScoringFragment(
     private val game: DiceGame,
     private val fragment: GameFragment
@@ -42,7 +46,8 @@ class ScoringFragment(
                             .remove(this@ScoringFragment)
                             .commit()
 
-                        fragment.score()
+                        // notify the parent that this fragment is complete.
+                        fragment.notifyScoringCompleted()
                     }
                     return option
                 }

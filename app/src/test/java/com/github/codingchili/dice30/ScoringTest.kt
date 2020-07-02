@@ -7,6 +7,19 @@ import org.junit.Test
 import java.nio.file.Files
 import java.nio.file.Paths
 
+/**
+ * Runs test for the scoring algorithm with test cases read from a separate file.
+ * The test file uses the following format
+ *
+ * dice=<eyes>,<eyes>,<eyes>] alg=<algorithm> score=<expected score>
+ *
+ * Example;
+ * dice=5,2,3,2,2,1,6 alg=FIVE score=15
+ * dice=6,3,3,2,2,2,4,2 alg=SIX score=24
+ * ... and so on.
+ *
+ * Scenarios can be commented out by leading with '#'.
+ */
 class ScoringTest {
 
     @Test
@@ -22,14 +35,9 @@ class ScoringTest {
 
                 val score = Scoring().score(dice, algorithm)
 
-                System.err.println("roll $dice expected score $expected with algorithm $algorithm was $score.")
+                val message = "roll $dice expected score $expected with algorithm $algorithm was $score."
+                Assert.assertEquals(message, expected, score)
             }
-
-            /*Assert.assertEquals(
-                "roll $dice expected score $expected with algorithm $algorithm but was $score.",
-                expected,
-                score
-            )*/
         }
     }
 }
