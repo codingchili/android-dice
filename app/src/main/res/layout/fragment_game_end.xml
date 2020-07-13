@@ -102,14 +102,15 @@
                 android:id="@+id/list_area"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_gravity="center_horizontal">
-            <ListView
-                android:id="@+id/scoring_history"
-                android:layout_width="match_parent"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="96dp"
-                android:layout_height="match_parent" />
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1">
+
+                <ListView
+                    android:id="@+id/scoring_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="96dp" />
             </RelativeLayout>
 
         </LinearLayout>
