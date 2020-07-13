@@ -96,7 +96,9 @@
         android:layout_alignParentEnd="true"
         android:id="@+id/scoreboard_area">
 
-        <TextView android:text="@string/player_name" android:layout_width="wrap_content"
+        <TextView
+            android:text="@string/player_name"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/player_name"
             android:textColor="@color/white"
@@ -106,13 +108,13 @@
             android:enabled="true" />
 
         <TextView
+            android:text="@string/player_turn"
+            android:id="@+id/player_turn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="@string/player_score"
-            android:id="@+id/player_score"
-            android:layout_alignBottom="@+id/player_turn"
+            android:layout_alignBottom="@+id/player_score"
             android:layout_alignParentStart="true" />
 
         <TextView
@@ -120,8 +122,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="@string/player_turn"
-            android:id="@+id/player_turn"
+            android:text="@string/player_score"
+            android:id="@+id/player_score"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true" />
     </RelativeLayout>
