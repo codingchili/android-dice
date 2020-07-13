@@ -18,10 +18,16 @@ class Die {
     var eyes: Eyes = Eyes.ONE
         private set
 
+    /**
+     * @param value sets the initial number of eyes for the die.
+     */
     constructor(value: Eyes) {
         eyes = value
     }
 
+    /**
+     * @param random generates a random number of eyes using the provided generator.
+     */
     constructor(random: Random) {
         roll(random)
     }
@@ -31,6 +37,23 @@ class Die {
 
     private fun roll(random: Random) {
         eyes = Eyes.values()[random.nextInt(Eyes.values().size)]
+    }
+
+    /**
+     * @return the name of the drawable resource that represents the current
+     * state of the die.
+     */
+    fun resourceName(): String {
+        val resource = eyes.toString().toLowerCase(Locale.ROOT)
+        return if (this.stored) "${resource}_stored" else resource;
+    }
+
+    /**
+     * Marks this die as counted, used when calculating a score.
+     */
+    fun count(): Die {
+        counted = true
+        return this
     }
 
     override fun hashCode(): Int {
@@ -47,16 +70,6 @@ class Die {
 
     override fun toString(): String {
         return StringBuilder().append(value).toString()
-    }
-
-    fun resourceName(): String {
-        val resource = eyes.toString().toLowerCase(Locale.ROOT)
-        return if (this.stored) "${resource}_stored" else resource;
-    }
-
-    fun count(): Die {
-        counted = true
-        return this
     }
 
     enum class Eyes {

@@ -16,6 +16,9 @@ class DiceGame {
     var turn = 0
         private set
 
+    /**
+     * Rolls all dice except those that have been stored.
+     */
     fun roll() {
         roll++
         if (dice.isEmpty()) {
@@ -33,14 +36,23 @@ class DiceGame {
         }
     }
 
+    /**
+     * @return true if the player has not reached the maximum number of rolls for this turn.
+     */
     fun hasRolls(): Boolean {
         return roll < ROLL_PER_TURN
     }
 
+    /**
+     * @return true if the player has not reached the maximum number of turns per game.
+     */
     fun hasTurns(): Boolean {
         return turn < TURNS_PER_GAME
     }
 
+    /**
+     * @return the total score so far for the current game.
+     */
     fun score(): Int {
         player.score = scoring.total()
         roll = 0

@@ -61,9 +61,7 @@ class Scoring {
     }
 
     /**
-     * The algorithm which calculates the best score for the given algorithm on a set of dice.
-     *
-     * The algorithm does the following,
+     * The scoring algorithm does the following,
      *
      * 1) generate all possible permutations of the die set using recursion
      *    with depth first and backtracking. Reorder the dice, to make sure
@@ -102,7 +100,7 @@ class Scoring {
      *
      * The scoring algorithm goes from left to right, creating a combination of dice groups
      * that matches the sum. Whenever the algorithm encounters a die which value
-     * is added to the running total exceeds the algorithm target - all other dice are
+     * when added to the running total exceeds the algorithm target - all other dice are
      * ignored and won't be added to a combination.
      *
      * So for example, if the permutation produced the following instead
@@ -114,9 +112,7 @@ class Scoring {
      *
      * [4], [2, 2], [3, 1]
      *
-     * And the last 6 is ignored, this combination yields a higher score. By using
-     * the order to signify the order of pairing dice, calculating the score becomes much
-     * easier. It might be harder to explain though, so watch out for that.
+     * And the last 6 is ignored, this combination yields a higher score.
      */
     private fun selected(dice: List<Die>, algorithm: Algorithm): Int {
         var current = 0

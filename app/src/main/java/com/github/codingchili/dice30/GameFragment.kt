@@ -82,6 +82,10 @@ class GameFragment : Fragment() {
         score.visibility = View.VISIBLE
     }
 
+    /**
+     * When the user selects a scoring algorithm from the fragment which displays them, that
+     * fragment will use this method to notify that it is complete.
+     */
     fun notifyScoringCompleted() {
         game.score()
         updateGame()
