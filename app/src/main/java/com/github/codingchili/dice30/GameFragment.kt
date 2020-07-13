@@ -23,6 +23,7 @@ class GameFragment : Fragment() {
     private lateinit var fragment: View
     private lateinit var roll: Button
     private lateinit var score: Button
+    private var scoring = false
 
     // references to drawables where dice can be displayed.
     private val slots =
@@ -98,24 +99,28 @@ class GameFragment : Fragment() {
                 .replace(R.id.container, EndFragment(game))
                 .commit()
         }
+        scoring = false
     }
 
     private fun scoreAction(view: View) {
+        scoring = true
         fragmentManager!!.beginTransaction()
             .add(R.id.container, ScoringFragment(game, this))
             .commit()
     }
 
     private fun saveAction(view: View) {
-        if (game.dice.isNotEmpty()) {
-            // dice cannot be un-stored in later rolls in the same turn.
-            game.dice[slots.indexOf(view.id)].stored = true
-        }
-        renderDice(game.dice)
+        if (!scoring) {
+            if (game.dice.isNotEmpty()) {
+                // dice cannot be un-stored in later rolls in the same turn.
+                game.dice[slots.indexOf(view.id)].stored = true
+            }
+            renderDice(game.dice)
 
-        // all dice are stored, force score action.
-        if (game.dice.all { it.stored }) {
-            scoreAction(view)
+            // all dice are stored, force score action.
+            if (game.dice.all { it.stored }) {
+                scoreAction(view)
+            }
         }
     }
 
