@@ -9,22 +9,34 @@ import androidx.appcompat.app.AppCompatActivity
  * then it starts the main game fragment.
  */
 class MainActivity : AppCompatActivity() {
+    private val savedKey = "saved"
+    private var introduced = false
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreate(bundle: Bundle?) {
+        super.onCreate(bundle)
         setContentView(R.layout.activity_game)
+        introduced = bundle?.getBoolean(savedKey) ?: false
 
-        if (savedInstanceState == null) {
-            // only appear once
+        if (!introduced) {
             AlertDialog.Builder(this)
+                .setCancelable(false)
                 .setMessage(R.string.how_to_play)
                 .setPositiveButton(R.string.thanks) { dialog, _ ->
-                    supportFragmentManager.beginTransaction()
-                        .add(R.id.container, GameFragment())
-                        .commit()
-
+                    introduced = true
+                    showGameFragment()
                     dialog.dismiss()
                 }.show()
         }
+    }
+
+    private fun showGameFragment() {
+        supportFragmentManager.beginTransaction()
+            .add(R.id.container, GameFragment())
+            .commit()
+    }
+
+    override fun onSaveInstanceState(bundle: Bundle) {
+        bundle.putBoolean(savedKey, introduced)
+        super.onSaveInstanceState(bundle)
     }
 }
