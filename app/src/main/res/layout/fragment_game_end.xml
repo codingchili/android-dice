@@ -14,10 +14,10 @@
         <RelativeLayout
             android:id="@+id/button_area"
             android:layout_width="fill_parent"
-            android:layout_height="48dp"
+            android:layout_height="66dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="0dp">
 
             <Button
                 android:id="@+id/button_quit"
@@ -26,8 +26,11 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:background="@color/primary"
+                android:stateListAnimator="@null"
+                android:elevation="8dp"
                 android:textColor="@color/white"
-                android:layout_marginStart="18dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="18dp"
                 android:text="@string/quit" />
 
             <Button
@@ -36,7 +39,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="18dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="18dp"
+                android:stateListAnimator="@null"
+                android:elevation="8dp"
                 android:background="@color/primary"
                 android:textColor="@color/white"
                 android:text="@string/newgame" />
