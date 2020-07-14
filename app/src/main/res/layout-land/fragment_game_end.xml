@@ -25,7 +25,6 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:background="@color/primary"
                 android:textColor="@color/white"
                 android:layout_marginStart="18dp"
                 android:text="@string/quit" />
@@ -37,7 +36,6 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="18dp"
-                android:background="@color/primary"
                 android:textColor="@color/white"
                 android:text="@string/newgame" />
         </RelativeLayout>
@@ -98,7 +96,7 @@
                 android:id="@+id/scoring_history"
                 android:layout_width="match_parent"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="96dp"
+                android:layout_marginBottom="82dp"
                 android:layout_height="match_parent" />
             </RelativeLayout>
 

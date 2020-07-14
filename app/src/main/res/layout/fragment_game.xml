@@ -71,22 +71,15 @@
             android:text="@string/score_dice"
             android:visibility="gone"
             android:id="@+id/dice_score"
-            android:background="@color/primary"
             android:textColor="@color/white"
-            android:stateListAnimator="@null"
-            android:elevation="8dp"
             android:layout_alignParentStart="true"/>
 
         <Button
             android:layout_width="128dp"
-            android:layout_marginBottom="16dp"
             android:layout_height="wrap_content"
             android:text="@string/throw_dice"
             android:id="@+id/dice_roll"
-            android:background="@color/primary"
             android:textColor="@color/white"
-            android:stateListAnimator="@null"
-            android:elevation="8dp"
             android:layout_alignParentEnd="true"/>
 
     </RelativeLayout>
